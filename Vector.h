@@ -174,7 +174,8 @@ T& Vector<T>::at(UInt32 pos)
 	if (pos < sz) {
 		return arr[pos];
 	} else {
-		exit(-1);
+		T tmp = T();
+		return tmp;
 	}
 }
 
