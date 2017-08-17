@@ -35,9 +35,16 @@ int main()
 		std::cout << std::endl;
 	}
 
+
+
 	for (int i = 0; i < v.size(); i++) {
 		std::cout << v[i] << " " << v.at(i) << std::endl;
 	}
 	
+	for (int i = 0; i < v.size(); i++) {
+		v[i] = i*10;
+		v.print();
+		std::cout << std::endl;
+	}
 
 }

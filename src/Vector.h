@@ -55,7 +55,7 @@ Vector<T>::Vector(UInt32 initial_cap)
 template <class T> 
 Vector<T>::~Vector()
 {
-	delete arr;
+	delete []  arr;
 }
 
 // copy constructor
@@ -77,7 +77,7 @@ Vector<T>& Vector<T>::operator=(const Vector& v)
 {
 	this->cap = v.cap;
 	this->sz  = v.sz;
-	delete arr;
+	delete []  arr;
 	arr = new T[cap];
 
 	for (UInt32 i = 0; i < this->sz; i++) {
@@ -101,7 +101,7 @@ void Vector<T>::push_back(T t)
 		for (; i < sz; i++) {
 			arr[i] = tmp[i];
 		}
-		delete tmp;
+		delete [] tmp;
 		arr[i] = t;
 		sz++;
 	}
@@ -137,7 +137,7 @@ void Vector<T>::push_front(T t)
 		for (UInt32 i = sz; i > 0; i--) {
 			arr[i] = tmp[i-1];
 		}
-		delete tmp;
+		delete [] tmp;
 		arr[0] = t;
 		sz++;
 	}
